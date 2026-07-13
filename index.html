@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -514,6 +514,120 @@ footer .hint i{color:var(--accent);margin-right:6px}
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
+/* ============ LIGHT MODE ============ */
+:root[data-theme="light"]{
+  /* deeper violet: the pale one vanished on paper */
+  --accent:#6D28D9;
+  --accent-rgb:109,40,217;
+  --accent-2:#9333EA;
+
+  --bg:#F7F5F2;
+  --bg-2:#F0EDE9;
+  --panel:#FFFFFF;
+  --panel-2:#F5F2EE;
+  --line:rgba(18,14,28,.12);
+  --line-2:rgba(18,14,28,.20);
+  --text:#15111C;
+  --muted:#514B5E;
+  --dim:#7A7488;
+}
+:root[data-theme="light"] body{font-weight:400}
+:root[data-theme="light"] .mesh{
+  background:
+    radial-gradient(60vw 60vw at 12% 8%, rgba(var(--accent-rgb),.16), transparent 60%),
+    radial-gradient(50vw 50vw at 88% 22%, rgba(var(--accent-rgb),.09), transparent 62%),
+    radial-gradient(70vw 55vw at 70% 92%, rgba(var(--accent-rgb),.11), transparent 65%),
+    radial-gradient(45vw 45vw at 20% 75%, rgba(255,190,150,.14), transparent 60%),
+    linear-gradient(180deg,#FAF8F6 0%, #F3F0EC 45%, #F7F5F2 100%);
+}
+:root[data-theme="light"] .mesh::after{
+  background:radial-gradient(38vw 38vw at 50% 50%, rgba(var(--accent-rgb),.09), transparent 60%);
+}
+:root[data-theme="light"] .grain{opacity:.035;mix-blend-mode:multiply}
+
+:root[data-theme="light"] header{background:linear-gradient(180deg,rgba(247,245,242,.9),rgba(247,245,242,0))}
+:root[data-theme="light"] header.stuck{background:rgba(247,245,242,.9)}
+
+:root[data-theme="light"] .prog-h,
+:root[data-theme="light"] .prog-v{background:rgba(18,14,28,.07)}
+
+:root[data-theme="light"] h1 .l2{-webkit-text-stroke:1.4px rgba(21,17,28,.42)}
+:root[data-theme="light"] .stat .num{background:linear-gradient(100deg,#15111C 15%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text}
+
+:root[data-theme="light"] .btn{background:rgba(18,14,28,.03)}
+:root[data-theme="light"] .btn.primary{
+  color:#fff;font-weight:600;
+  background-image:linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.22)),linear-gradient(100deg,var(--accent),var(--accent-2));
+  box-shadow:0 12px 30px -12px rgba(var(--accent-rgb),.7);
+}
+:root[data-theme="light"] .btn.primary:hover{box-shadow:0 18px 42px -12px rgba(var(--accent-rgb),.85)}
+:root[data-theme="light"] .btn.ghost{border-color:rgba(18,14,28,.22)}
+:root[data-theme="light"] .btn.ghost:hover{background:rgba(var(--accent-rgb),.10);border-color:rgba(var(--accent-rgb),.7)}
+:root[data-theme="light"] .logo{color:#fff;background:linear-gradient(140deg,var(--accent),var(--accent-2));box-shadow:0 6px 20px -6px rgba(var(--accent-rgb),.6)}
+:root[data-theme="light"] .avatar{box-shadow:0 0 0 6px rgba(var(--accent-rgb),.08),0 10px 40px -12px rgba(var(--accent-rgb),.5)}
+
+/* effects need more punch on paper: glow reads as nothing at low alpha */
+:root[data-theme="light"] .prog-h .fill,
+:root[data-theme="light"] .prog-v .fill{box-shadow:0 0 8px rgba(var(--accent-rgb),.5)}
+:root[data-theme="light"] .cell:hover,
+:root[data-theme="light"] .card:hover{
+  border-color:rgba(var(--accent-rgb),.5);
+  box-shadow:0 18px 40px -22px rgba(var(--accent-rgb),.55);
+}
+:root[data-theme="light"] .li-ico{background:rgba(var(--accent-rgb),.08)}
+:root[data-theme="light"] .card .idx .badge{background:rgba(var(--accent-rgb),.10)}
+:root[data-theme="light"] .tl-item::before{box-shadow:0 0 0 4px rgba(var(--accent-rgb),.12)}
+/* the closer: on paper, glow reads as a stain. Use a clean card with a
+   crisp edge, a hairline of accent at the top, and a soft cast shadow. */
+:root[data-theme="light"] .closer{
+  background:#FFFFFF;
+  border-color:rgba(var(--accent-rgb),.20);
+  box-shadow:0 40px 80px -50px rgba(var(--accent-rgb),.55),0 3px 14px -8px rgba(18,14,28,.16);
+}
+:root[data-theme="light"] .closer::before{
+  background:radial-gradient(circle, rgba(var(--accent-rgb),.20), transparent 62%);
+}
+:root[data-theme="light"] .closer::after{
+  content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:.55;
+}
+:root[data-theme="light"] .links a,
+:root[data-theme="light"] .links .loc{background:#FFFFFF;border-color:rgba(18,14,28,.16)}
+:root[data-theme="light"] .links a:hover{background:rgba(var(--accent-rgb),.07)}
+:root[data-theme="light"] h2 em{text-shadow:none}
+:root[data-theme="light"] .dot-live{box-shadow:0 0 8px rgba(var(--accent-rgb),.8)}
+
+:root[data-theme="light"] .cell,
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .edu{
+  background:linear-gradient(160deg,#FFFFFF,#F6F3EF);
+  box-shadow:0 2px 10px -6px rgba(18,14,28,.15);
+}
+:root[data-theme="light"] .cell::before,
+:root[data-theme="light"] .card::before{
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%), rgba(var(--accent-rgb),.12), transparent 62%);
+}
+:root[data-theme="light"] .marquee{background:rgba(18,14,28,.02)}
+:root[data-theme="light"] .tag,
+:root[data-theme="light"] .links a,
+:root[data-theme="light"] .links .loc{background:rgba(18,14,28,.02)}
+:root[data-theme="light"] .closer{background:linear-gradient(160deg,#FFFFFF,rgba(246,243,239,.7))}
+:root[data-theme="light"] .toast{background:rgba(255,255,255,.95);color:var(--text)}
+:root[data-theme="light"] .tl-item::before{background:#FFFFFF}
+
+/* theme switch */
+.theme-btn{
+  width:42px;height:42px;flex:none;margin-left:10px;
+  display:inline-grid;place-items:center;border-radius:12px;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.03);
+  color:var(--muted);font-size:14px;
+  transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease),transform .3s var(--ease);
+}
+.theme-btn:hover{color:var(--accent);border-color:rgba(var(--accent-rgb),.6);transform:rotate(-12deg)}
+:root[data-theme="light"] .theme-btn{background:rgba(18,14,28,.03)}
+.nav-right{display:flex;align-items:center}
+
 /* ============ A11Y ============ */
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -542,15 +656,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
 <header id="hdr">
   <button class="logo" id="logo" aria-label="Cycle accent colour">SS</button>
-  <nav aria-label="Sections">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#work">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#certifications">Certs</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="nav-right">
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" aria-label="Switch to dark mode" aria-pressed="true">
+      <i class="fa-solid fa-moon" id="themeIco"></i>
+    </button>
+  </div>
 </header>
 
 <main>
@@ -1156,7 +1275,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(' + rgb + ',.65)';
+        ctx.fillStyle = 'rgba(' + rgb + ',' + (document.documentElement.getAttribute('data-theme') === 'light' ? .5 : .65) + ')';
         ctx.fill();
 
         for (var j = i + 1; j < pts.length; j++) {
@@ -1186,27 +1305,69 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     draw();
   })();
 
+  /* ---------- LIGHT / DARK (light is the default) ---------- */
+  var root = document.documentElement;
+  function repaintAccent(){ if (typeof paintTheme === 'function') paintTheme(); }
+  var tBtn = document.getElementById('themeBtn');
+  var tIco = document.getElementById('themeIco');
+  tBtn.addEventListener('click', function(){
+    var light = root.getAttribute('data-theme') === 'light';
+    if (light) {
+      root.removeAttribute('data-theme');
+      tIco.className = 'fa-solid fa-sun';
+      tBtn.setAttribute('aria-label', 'Switch to light mode');
+      tBtn.setAttribute('aria-pressed', 'false');
+    } else {
+      root.setAttribute('data-theme', 'light');
+      tIco.className = 'fa-solid fa-moon';
+      tBtn.setAttribute('aria-label', 'Switch to dark mode');
+      tBtn.setAttribute('aria-pressed', 'true');
+    }
+    repaintAccent();   /* swap the accent to the palette that suits the new mode */
+  });
+
   /* ---------- EASTER EGG: accent themes ---------- */
+  /* Each theme carries two palettes. Neon glows on black but disappears on
+     paper, so light mode gets a darker, more saturated cousin of the same hue. */
   var themes = [
-    {n:'Electric Violet', a:'#8B5CF6', rgb:'139,92,246', b:'#C084FC'},
-    {n:'Signal Cyan',     a:'#22D3EE', rgb:'34,211,238', b:'#7DD3FC'},
-    {n:'Acid Lime',       a:'#A3E635', rgb:'163,230,53', b:'#D9F99D'},
-    {n:'Solar Amber',     a:'#FBBF24', rgb:'251,191,36', b:'#FCD34D'},
-    {n:'Ultra Rose',      a:'#FB7185', rgb:'251,113,133', b:'#FDA4AF'}
+    {n:'Electric Violet',
+      dark:{a:'#8B5CF6', rgb:'139,92,246',  b:'#C084FC'},
+      lite:{a:'#6D28D9', rgb:'109,40,217',  b:'#9333EA'}},
+    {n:'Signal Cyan',
+      dark:{a:'#22D3EE', rgb:'34,211,238',  b:'#7DD3FC'},
+      lite:{a:'#0E7490', rgb:'14,116,144',  b:'#0891B2'}},
+    {n:'Acid Lime',
+      dark:{a:'#A3E635', rgb:'163,230,53',  b:'#D9F99D'},
+      lite:{a:'#4D7C0F', rgb:'77,124,15',   b:'#65A30D'}},
+    {n:'Solar Amber',
+      dark:{a:'#FBBF24', rgb:'251,191,36',  b:'#FCD34D'},
+      lite:{a:'#B45309', rgb:'180,83,9',    b:'#D97706'}},
+    {n:'Ultra Rose',
+      dark:{a:'#FB7185', rgb:'251,113,133', b:'#FDA4AF'},
+      lite:{a:'#BE123C', rgb:'190,18,60',   b:'#E11D48'}}
   ];
   var ti = 0, toast = document.getElementById('toast'), tt;
+
+  function paintTheme(){
+    var t = themes[ti];
+    var p = root.getAttribute('data-theme') === 'light' ? t.lite : t.dark;
+    var st = root.style;
+    st.setProperty('--accent', p.a);
+    st.setProperty('--accent-rgb', p.rgb);
+    st.setProperty('--accent-2', p.b);
+  }
+
   document.getElementById('logo').addEventListener('click', function(){
     ti = (ti + 1) % themes.length;
-    var t = themes[ti];
-    var root = document.documentElement.style;
-    root.setProperty('--accent', t.a);
-    root.setProperty('--accent-rgb', t.rgb);
-    root.setProperty('--accent-2', t.b);
-    toast.textContent = t.n;
+    paintTheme();
+    toast.textContent = themes[ti].n;
     toast.classList.add('show');
     clearTimeout(tt);
     tt = setTimeout(function(){ toast.classList.remove('show'); }, 1600);
   });
+
+  /* boot: light is the default, so paint the paper-safe palette straight away */
+  paintTheme();
 })();
 </script>
 
